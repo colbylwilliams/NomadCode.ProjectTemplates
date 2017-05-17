@@ -39,10 +39,10 @@
 				<Reference type="Gac" refto="System" />
 			</References>
 			<Packages>
-				<package id="Microsoft.Azure.Mobile" version="0.8.1" />
-				<package id="Microsoft.Azure.Mobile.Analytics" version="0.8.1" />
-				<package id="Microsoft.Azure.Mobile.Crashes" version="0.8.1" />
-				<package id="Microsoft.Azure.Mobile.Distribute" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile" version="0.11.1" />
+				<package id="Microsoft.Azure.Mobile.Analytics" version="0.11.1" />
+				<package id="Microsoft.Azure.Mobile.Crashes" version="0.11.1" />
+				<package id="Microsoft.Azure.Mobile.Distribute" version="0.11.1" />
 				<package id="Plugin.VersionTracking" version="1.0.1" />
 				<package id="NomadCode.BotFramework" version="0.4.5-preview" />
 			</Packages>
@@ -75,10 +75,10 @@
 				<Reference type="Gac" refto="System" />
 			</References>
 			<Packages>
-				<package id="Microsoft.Azure.Mobile" version="0.8.1" />
-				<package id="Microsoft.Azure.Mobile.Analytics" version="0.8.1" />
-				<package id="Microsoft.Azure.Mobile.Crashes" version="0.8.1" />
-				<package id="Microsoft.Azure.Mobile.Distribute" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile" version="0.11.1" />
+				<package id="Microsoft.Azure.Mobile.Analytics" version="0.11.1" />
+				<package id="Microsoft.Azure.Mobile.Crashes" version="0.11.1" />
+				<package id="Microsoft.Azure.Mobile.Distribute" version="0.11.1" />
 				<package id="Plugin.VersionTracking" version="1.0.1" />
 				<package id="NomadCode.BotFramework" version="0.4.5-preview" />
 			</Packages>

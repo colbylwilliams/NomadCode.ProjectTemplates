@@ -1,6 +1,6 @@
 VSTOOL ?= /Applications/Visual\ Studio.app/Contents/MacOS/vstool
 
-VERSION=0.2.0
+VERSION=0.2.1
 CONFIGURATION=Release
 
 PROJECT_NAME=NomadCode.ProjectTemplates
