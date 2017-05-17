@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Native Bot (iOS, Android)</_Name>
+		<Category>multiplat/app/nomadcode</Category>
+		<LanguageName>C#</LanguageName>
+		<FileExtension>.csproj</FileExtension>
+		<Icon>md-crossplatform-shared-project</Icon>
+		<Image id="md-crossplatform-shared-project" />
+		<_Description>Creates a simple native iOS and Android app with some boilerplate setup and a bot!</_Description>
+		<DefaultFilename>MyClass</DefaultFilename>
+		<FileExtension>.csproj</FileExtension>
+	</TemplateConfiguration>
+	<Actions>
+	</Actions>
+	<Combine name="${ProjectName}" directory=".">
+		<!-- Shared -->
+		<Project name="${ProjectName}.Shared" directory="${ProjectName}.Shared" type="SharedAssetsProject">
+			<Options DefaultNamespace="${SolutionName}" HideGettingStarted="true" />
+			<Files>
+				<File name="Bootstrap.cs" src="Shared/Bootstrap.cs" />
+				<File name="Keys/Keys.cs" DefaultName="Keys.cs" src="Shared/Keys/BotKeys.cs" />
+				<File name="Keys/PrivateKeys.cs" DefaultName="PrivateKeys.cs" src="Shared/Keys/BotPrivateKeys.cs" />
+				<File name="Settings/SettingAccessors.cs" src="Shared/Settings/SettingAccessors.cs" />
+				<File name="Settings/SettingKeys.cs" src="Shared/Settings/SettingKeys.cs" />
+				<File name="Extensions/StringExtensions.cs" src="Shared/Extensions/StringExtensions.cs" />
+				<File name="Extensions/TaskExtensions.cs" src="Shared/Extensions/TaskExtensions.cs" />
+				<File name="Utilities/Log.cs" src="Shared/Utilities/Log.cs" />
+			</Files>
+		</Project>
+		<!-- iOS -->
+		<Project name="${ProjectName}.iOS" directory="${ProjectName}.iOS" type="XamarinIOS">
+			<Options DefaultNamespace="${ProjectName}.iOS" HideGettingStarted="true" />
+			<References>
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="System.Xml" />
+				<Reference type="Gac" refto="Xamarin.iOS" />
+				<Reference type="Project" refto="${ProjectName}.Shared" />
+				<Reference type="Gac" refto="System" />
+			</References>
+			<Packages>
+				<package id="Microsoft.Azure.Mobile" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile.Analytics" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile.Crashes" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile.Distribute" version="0.8.1" />
+				<package id="Plugin.VersionTracking" version="1.0.1" />
+				<package id="NomadCode.BotFramework" version="0.4.5-preview" />
+			</Packages>
+			<Files>
+				<File name="AppDelegate.cs" DefaultName="AppDelegate.cs" src="iOS/AppDelegate.cs" />
+				<File name="Entitlements.plist" DefaultName="Entitlements.plist" src="iOS/Entitlements.plist" />
+				<File name="Info.plist" DefaultName="Info.plist" src="iOS/Info.plist" />
+				<File name="LaunchScreen.storyboard" DefaultName="LaunchScreen.storyboard" src="iOS/LaunchScreen.storyboard" />
+				<File name="Main.cs" DefaultName="Main.cs" src="iOS/Main.cs" />
+				<File name="Main.storyboard" DefaultName="Main.storyboard" src="iOS/Bot.storyboard" />
+				<File name="packages.config" DefaultName="packages.config" src="iOS/packages.config" />
+				<File name="root_plist.sh" src="iOS/root_plist.sh" />
+				<File name="ViewControllers/BotNavigationController.cs" DefaultName="BotNavigationController.cs" src="iOS/ViewControllers/BotNavigationController.cs" />
+				<File name="Assets.xcassets/AppIcon.appiconset/Contents.json" src="iOS/Assets.xcassets/AppIcon.appiconset/Contents.json" />
+				<File name="Assets.xcassets/Contents.json" src="iOS/Assets.xcassets/Contents.json" />
+				<File name="Properties/AssemblyInfo.cs" DefaultName="AssemblyInfo.cs" src="iOS/Properties/AssemblyInfo.cs" />
+				<File name="Extensions/StoryboardExtensions.cs" src="iOS/Extensions/StoryboardExtensions.cs" />
+				<File name="Extensions/ViewExtensions.cs" src="iOS/Extensions/ViewExtensions.cs" />
+				<File name="Settings/SettingUtilities.cs" src="iOS/Settings/SettingUtilities.cs" />
+			</Files>
+		</Project>
+		<!-- Droid -->
+		<Project name="${ProjectName}.Droid" directory="${ProjectName}.Droid" type="MonoDroid">
+			<Options DefaultNamespace="${ProjectName}.Droid" HideGettingStarted="true" AndroidApplication="true" AndroidResgenFile="Resources\Resource.Designer.cs" AppDesignerFolder="Properties" JavaMaximumHeapSize="1G" />
+			<References>
+				<Reference type="Gac" refto="System.Core" />
+				<Reference type="Gac" refto="System.Xml" />
+				<Reference type="Gac" refto="Mono.Android" />
+				<Reference type="Project" refto="${ProjectName}.Shared" />
+				<Reference type="Gac" refto="System" />
+			</References>
+			<Packages>
+				<package id="Microsoft.Azure.Mobile" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile.Analytics" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile.Crashes" version="0.8.1" />
+				<package id="Microsoft.Azure.Mobile.Distribute" version="0.8.1" />
+				<package id="Plugin.VersionTracking" version="1.0.1" />
+				<package id="NomadCode.BotFramework" version="0.4.5-preview" />
+			</Packages>
+			<Files>
+				<Directory name="Resources">
+					<Directory name="drawable" />
+					<Directory name="drawable-hdpi" />
+					<Directory name="drawable-mdpi" />
+					<Directory name="drawable-xhdpi" />
+					<Directory name="drawable-xxhdpi" />
+				</Directory>
+				<RawFile name="Resources/mipmap-hdpi/Icon.png" src="Droid/Resources/mipmap-hdpi/Icon.png" />
+				<RawFile name="Resources/mipmap-mdpi/Icon.png" src="Droid/Resources/mipmap-mdpi/Icon.png" />
+				<RawFile name="Resources/mipmap-xhdpi/Icon.png" src="Droid/Resources/mipmap-xhdpi/Icon.png" />
+				<RawFile name="Resources/mipmap-xxhdpi/Icon.png" src="Droid/Resources/mipmap-xxhdpi/Icon.png" />
+				<RawFile name="Resources/mipmap-xxxhdpi/Icon.png" src="Droid/Resources/mipmap-xxxhdpi/Icon.png" />
+				<File name="Resources/layout/Main.axml" src="Droid/Resources/layout/Main.axml" />
+				<File name="Resources/values/arrays.xml" src="Droid/Resources/values/arrays.xml" />
+				<File name="Resources/values/colors.xml" src="Droid/Resources/values/colors.xml" />
+				<File name="Resources/values/dimens.xml" src="Droid/Resources/values/dimens.xml" />
+				<File name="Resources/values/integers.xml" src="Droid/Resources/values/integers.xml" />
+				<File name="Resources/values/strings.xml" src="Droid/Resources/values/strings.xml" />
+				<File name="Resources/values/styles.xml" src="Droid/Resources/values/styles.xml" />
+				<File name="Resources/AboutResources.txt" src="Droid/Resources/AboutResources.txt" />
+				<File name="Resources/Resource.Designer.cs" src="Droid/Resources/Resource.Designer.cs" />
+				<File name="Activities/MainActivity.cs" DefaultName="MainActivity.cs" src="Droid/Activities/MainActivity.cs" />
+				<File name="Assets/AboutAssets.txt" DefaultName="AboutAssets.txt" src="Droid/Assets/AboutAssets.txt" />
+				<File name="Properties/AssemblyInfo.cs" DefaultName="AssemblyInfo.cs" src="Droid/Properties/AssemblyInfo.cs" />
+				<File name="Properties/AndroidManifest.xml" DefaultName="AndroidManifest.xml" src="Droid/Properties/AndroidManifest.xml" />
+				<File name="environment.txt" DefaultName="environment.txt" src="Droid/environment.txt" />
+				<File name="packages.config" DefaultName="packages.config" src="Droid/packages.config" />
+				<File name="Settings/SettingUtilities.cs" src="Droid/Settings/SettingUtilities.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

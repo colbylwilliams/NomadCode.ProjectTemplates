@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>NomadCode Native App (iOS, Android)</_Name>
+		<Category>nomadcode/nomadcodeapp/nomadcodeappnative</Category>
+		<LanguageName>C#</LanguageName>
+		<FileExtension>.csproj</FileExtension>
+		<Icon>md-crossplatform-pcl-project</Icon>
+		<Image id="md-crossplatform-pcl-project" />
+		<_Description>Creates a simple cross-platform app with one page plus some boilerplate setup.</_Description>
+		<DefaultFilename>MyClass</DefaultFilename>
+		<FileExtension>.csproj</FileExtension>
+	</TemplateConfiguration>
+	<Actions>
+	</Actions>
+	<Combine name="NomadCode.ProjectTemplates" directory=".">
+		<Options>
+			<StartupProject>NomadCode.ProjectTemplates</StartupProject>
+		</Options>
+		<Project name="NomadCode.ProjectTemplates" directory=".">
+			<References>
+			</References>
+			<Packages>
+			</Packages>
+			<Files>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<Runtime>
+	</Runtime>
+	<Extension path="/MonoDevelop/Ide/ProjectTemplateCategories/multiplat/app">
+		<Category id="nomadcode" name="NomadCode" insertbefore="forms" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
+		<!--<ProjectTemplate id="nomadcodesolution" file="Templates/Projects/Forms/Pcl/NomadCode.Forms.Pcl.Solution.xpt.xml" />-->
+		<!--<ProjectTemplate id="nomadcodesolution" file="Templates/Projects/Forms/Shared/NomadCode.Forms.Shared.Solution.xpt.xml" />-->
+		<!--<ProjectTemplate id="nomadcodesolution" file="Templates/Projects/Native/Pcl/NomadCode.Pcl.Solution.xpt.xml" />-->
+		<ProjectTemplate id="nomadcodesharedsolution" file="Templates/Projects/Native/NomadCode.Shared.Solution.xpt.xml" />
+		<ProjectTemplate id="nomadcodebotsolution" file="Templates/Projects/Native/NomadCode.Bot.Solution.xpt.xml" />
+	</Extension>
+</ExtensionModel>
